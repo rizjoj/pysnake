@@ -2,7 +2,12 @@
 Learning Python via the Snake game
 
 ## Usage:
-`python snake.py`
+`python snake.py`   # Default speed = 10
+`python snake.py 5` # Speed = 5 (min = 1, max = 30)
+
+Edit `WINDOW_WIDTH` and `WINDOW_HEIGHT` for different game board sizes
+Edit `SNAKE_BLOCK` for different game tile sizes
 
 ## Requires:
 Python 3+
+`pip install pygame`
