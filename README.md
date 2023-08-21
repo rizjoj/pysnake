@@ -15,4 +15,8 @@ Edit `SNAKE_BLOCK` in `snake.py` for different game tile sizes
 ## Requires:
 Python 3+
 
+Video tested only on Mac. May require additional dependencies - run and win to find out.
+
 `pip install pygame`
+
+`pip install moviepy`
