@@ -174,7 +174,7 @@ if is_outside_board(x1, y1):
     # Show Dying animation inside frame
     x1 -= x1_change
     y1 -= y1_change
-# Dying animation: Rotate snake head 16 times
+# Dying animation: Spin snake head
 for _ in range(24):
     head = pygame.transform.rotate(head, -90)
     window.blit(head, (x1, y1))
