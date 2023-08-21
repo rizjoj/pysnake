@@ -5,6 +5,7 @@ import random
 import itertools as it
 import circularlist
 from playsound import playsound
+from moviepy.editor import *
 
 SNAKE_BLOCK = 320  # Game size. Try 1, 5, 10, 20, 40, 80, 160, 320
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 640  # See IF suite below for valid values
@@ -196,9 +197,9 @@ pygame.display.update()
 time.sleep(1)
 
 if is_winner:
-    playsound("audio/win.mp3", False)
-    while not pygame.event.get(pygame.KEYDOWN):
-        pass
+    video_clip = VideoFileClip("video/jablinski-sax.mp4")
+    video_clip.subclip
+    video_clip.preview()
 
 pygame.quit()
 quit()
