@@ -4,8 +4,9 @@ import pygame  # type: ignore
 import random
 import itertools as it
 import circularlist
+from playsound import playsound
 
-SNAKE_BLOCK = 80  # Game size. Try 1, 5, 10, 20, 40, 80, 160, 320
+SNAKE_BLOCK = 320  # Game size. Try 1, 5, 10, 20, 40, 80, 160, 320
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 640  # See IF suite below for valid values
 
 if WINDOW_WIDTH / SNAKE_BLOCK % 2 != 0 or WINDOW_HEIGHT / SNAKE_BLOCK % 2 != 0:
@@ -158,6 +159,7 @@ while not game_over:
 
     # Did snake eat/collide with food?
     if food_position == (x1, y1):
+        playsound("audio/eat.mp3", False)
         increment_score()
         snake.insert((x1, y1))  # Increment snake's length
         food_position = put_food()
@@ -175,6 +177,7 @@ if is_outside_board(x1, y1):
     x1 -= x1_change
     y1 -= y1_change
 # Dying animation: Rotate snake head 16 times
+playsound("audio/lose.mp3", False)
 for _ in range(24):
     head = pygame.transform.rotate(head, -90)
     window.blit(head, (x1, y1))
@@ -191,6 +194,11 @@ color = white if is_winner else red
 message(salutation + "! Your score: " + str(score), color)
 pygame.display.update()
 time.sleep(1)
+
+if is_winner:
+    playsound("audio/win.mp3", False)
+    while not pygame.event.get(pygame.KEYDOWN):
+        pass
 
 pygame.quit()
 quit()
