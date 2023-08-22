@@ -86,7 +86,7 @@ BOARD_POINTS = set(
 
 
 def put_food():
-    unoccupied_points = list(BOARD_POINTS.difference(snake_points))
+    unoccupied_points = list(BOARD_POINTS - snake_points)
     food_position = random.choice(unoccupied_points) if unoccupied_points else None
     window.blit(fruit, food_position or (-SNAKE_BLOCK, -SNAKE_BLOCK))
     return food_position
