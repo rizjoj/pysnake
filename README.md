@@ -16,3 +16,5 @@ Edit `SNAKE_BLOCK` in `snake.py` for different game tile sizes
 Python 3+
 
 `pip install pygame`
+
+`pip install playsound`
