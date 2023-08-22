@@ -196,10 +196,9 @@ message(salutation + "! Your score: " + str(score), color)
 pygame.display.update()
 time.sleep(1)
 
+# Easter egg for Ian
 if is_winner:
-    video_clip = VideoFileClip("video/jablinski-sax.mp4")
-    video_clip.subclip
-    video_clip.preview()
+    VideoFileClip("video/jablinski-sax.mp4").preview()
 
 pygame.quit()
 quit()
