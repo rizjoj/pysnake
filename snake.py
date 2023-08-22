@@ -5,7 +5,7 @@ import random
 import itertools as it
 import circularlist
 from playsound import playsound
-from moviepy.editor import *
+from moviepy.editor import VideoFileClip
 
 SNAKE_BLOCK = 320  # Game size. Try 1, 5, 10, 20, 40, 80, 160, 320
 WINDOW_WIDTH, WINDOW_HEIGHT = 1280, 640  # See IF suite below for valid values
@@ -88,7 +88,7 @@ BOARD_POINTS = set(
 
 
 def put_food():
-    unoccupied_points = list(BOARD_POINTS.difference(snake_points))
+    unoccupied_points = list(BOARD_POINTS - snake_points)
     food_position = random.choice(unoccupied_points) if unoccupied_points else None
     window.blit(fruit, food_position or (-SNAKE_BLOCK, -SNAKE_BLOCK))
     return food_position
